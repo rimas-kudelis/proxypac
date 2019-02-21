@@ -35,7 +35,7 @@ PAC;
         ?string $hosts = null,
         ?string $excludeUrls = null
     ) {
-        $proxies = $this->service->fetchProxies($type);
+        $proxies = $this->service->fetchProxies($type, $anon, $country);
         $proxyString = 'PROXY ' . implode('; PROXY ', $proxies);
 
         return new Response(
